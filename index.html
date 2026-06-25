@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⌨️ Typing Speed Tester</title>
+    <!-- Google Font for a clean, monospace feel -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⌨️ TypeRacer</h1>
+            <p>Test your typing speed. Accuracy matters.</p>
+        </header>
+
+        <!-- Stats Dashboard -->
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-label">⏱ Time</span>
+                <span class="stat-value" id="timer">0s</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">⚡ WPM</span>
+                <span class="stat-value" id="wpm">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">🎯 Accuracy</span>
+                <span class="stat-value" id="accuracy">100%</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">📊 Progress</span>
+                <span class="stat-value" id="progress">0/0</span>
+            </div>
+        </div>
+
+        <!-- Quote Display Area -->
+        <div class="quote-box">
+            <p id="quote-display">
+                <!-- Each letter will be wrapped in a <span> by JavaScript -->
+            </p>
+        </div>
+
+        <!-- Hidden Input (captures keystrokes) -->
+        <input type="text" id="typing-input" autofocus placeholder="Start typing here..." />
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="new-quote-btn" class="btn btn-primary">🔄 New Quote</button>
+            <button id="reset-btn" class="btn btn-secondary">⟲ Reset</button>
+        </div>
+
+        <!-- Result Popup (hidden by default) -->
+        <div id="result-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>🎉 Great Job!</h2>
+                <div class="result-stats">
+                    <p>Speed: <strong id="result-wpm">0</strong> WPM</p>
+                    <p>Accuracy: <strong id="result-accuracy">0%</strong></p>
+                    <p>Time: <strong id="result-time">0s</strong></p>
+                </div>
+                <button id="modal-close-btn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
